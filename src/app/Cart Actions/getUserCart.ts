@@ -1,12 +1,14 @@
 "use server"
 import { getMyToken } from "@/utilities/token";
+import { getServerSession } from "next-auth";
 
 
 
 
 export  async function getUserCartAction(){
 
-  const token = await  getMyToken()
+   const session = await getServerSession(authOptions);
+  const token = session?.token; 
     
   if (!token){
     throw Error("Login First")
