@@ -53,7 +53,7 @@ const Login = () => {
     
   }
   return (
-<>
+
     
     <div className='mx-auto my-12 px-5 md:px-0 w-full md:w-1/2'>
       <p className='text-center font-bold text-3xl mb-10'>Register Form</p>
@@ -90,12 +90,12 @@ const Login = () => {
 />  
 
 <Link href="/forgetPassword" className='block mt-3 font-semibold hover:text-green-700 transition-all duration-700 text-[20px]'>forget your password ?</Link>
-      <Button className=' w-1/8 text-[20px] absolute right-100 cursor-pointer bg-transparent border-1 border-black text-gray-800 hover:bg-transparent '>Login</Button>
+      <Button className=' w-full  md:w-1/8  text-[20px] md:absolute right-100 cursor-pointer bg-transparent border-1 border-black text-gray-800 hover:bg-transparent '>Login</Button>
   </form>
 </Form>
 
     </div>
-    </>
+    
   )
 }
 

@@ -13,12 +13,6 @@ export async function getMyToken() {
 
   console.log('toooken',decodedToken?.token);
   
-  // const x = (await cookies()).get("next-auth.session-token")?.value
-
-  // const token = await decode({
-  //   token:x,
-  //   secret:process.env.NEXTAUTH_SECRET!
-  // })
 
     return decodedToken?.token
 }

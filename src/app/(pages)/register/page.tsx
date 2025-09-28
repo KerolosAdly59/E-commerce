@@ -124,7 +124,7 @@ const Register = () => {
     </FormItem>
   )}
 />
-      <Button className='my-5  w-1/8 text-[20px] absolute right-100 cursor-pointer bg-transparent border-1 border-black text-gray-800 hover:bg-transparent'>Register</Button>
+      <Button className='my-5 w-full  md:w-1/8 text-[20px] md:absolute right-100 cursor-pointer bg-transparent border-1 border-black text-gray-800 hover:bg-transparent'>Register</Button>
   </form>
 </Form>
 

@@ -1,18 +1,23 @@
 "use client"
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import logo from "./../../../src/screens/freshcart-logo.svg"
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
 import { cartContext } from '@/Context/CartContext';
 import { Badge } from "@/components/ui/badge"
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
 
   const { data: session, status } = useSession()
 
   const { numOfCartItems }: any = useContext(cartContext)
+
+  const  [isOpen, setIsOpen] = useState(false)
+
+
 
 
   const path = usePathname()
@@ -26,7 +31,16 @@ const Navbar = () => {
             <Image src={logo} alt='logo' className='w-full' />
           </Link>
         </li>
-        <ul className='flex flex-col md:flex-row gap-6 text-center items-center ms-5'>
+
+
+
+        <button
+          className="md:hidden text-gray-800"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+        <ul className='hidden md:flex flex-col md:flex-row gap-6 text-center items-center ms-5'>
 
           {status === "authenticated" && <>
 
@@ -77,13 +91,13 @@ const Navbar = () => {
           {status === "loading" && <>
             <h1>Loading</h1>
           </>}
-          {status === "unauthenticated" && <Image src={logo} alt='logo' />}
+          {status === "unauthenticated" && <p></p>}
 
         </ul>
 
 
         {/* icons && buttons */}
-        <div className='flex flex-col md:flex-row gap-2 text-center items-center'>
+        <div className=' md:flex flex-col md:flex-row gap-2 text-center items-center'>
 
 
           {status === "authenticated" && <>
@@ -97,7 +111,7 @@ const Navbar = () => {
                 </Link>
               </div>
               <div>
-                <h1 className='text-blue-500 font-bold'>{session.user.name}</h1>
+                <h1 className='text-blue-500 font-bold'>Welcome {session.user.name}</h1>
 
                 <button className='cursor-pointer' onClick={() => signOut({
                   callbackUrl: "/login"
@@ -122,6 +136,40 @@ const Navbar = () => {
 
         </div>
       </div>
+            {isOpen && (
+        <div className="md:hidden mt-4 flex flex-col gap-4 items-center text-center">
+          {status === "authenticated" && <>
+            <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="/cart" onClick={() => setIsOpen(false)}>Cart</Link>
+            <Link href="/allorders" onClick={() => setIsOpen(false)}>All Orders</Link>
+            <Link href="/wishList" onClick={() => setIsOpen(false)}>Wish list</Link>
+            <Link href="/products" onClick={() => setIsOpen(false)}>Products</Link>
+            <Link href="/categories" onClick={() => setIsOpen(false)}>Categories</Link>
+            <Link href="/brands" onClick={() => setIsOpen(false)}>Brands</Link>
+          </>}
+
+          {status === "authenticated" && (
+            <div className="flex flex-col gap-2 items-center">
+              <span className="text-blue-500 font-bold">{session.user.name}</span>
+              <button
+                className="cursor-pointer"
+                onClick={() => {
+                  setIsOpen(false)
+                  signOut({ callbackUrl: "/login" })
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          )}
+
+          {status === "unauthenticated" && <>
+            <Link href="/login" onClick={() => setIsOpen(false)}>Login</Link>
+            <Link href="/register" onClick={() => setIsOpen(false)}>Register</Link>
+          </>}
+        </div>
+      )}
+    
     </div>
   )
 }
