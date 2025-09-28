@@ -8,8 +8,9 @@ import { authOptions } from "../auth";
 
 export  async function getUserCartAction(){
 
-   const session = await getServerSession(authOptions);
-  const token = session?.token; 
+  //  const session = await getServerSession(authOptions);
+  // const token = session?.token; 
+  const token = await getMyToken()
     
   if (!token){
     throw Error("Login First")
