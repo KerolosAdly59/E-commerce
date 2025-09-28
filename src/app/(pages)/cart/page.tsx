@@ -4,7 +4,6 @@ import Loading from '@/app/loading'
 import { Button } from '@/components/ui/button'
 import { cartContext } from '@/Context/CartContext'
 import React, { useContext } from 'react'
-import { product } from '@/types/product.type';
 import { ProductCart } from '@/types/cart.type'
 import Image from 'next/image'
 import { toast } from 'sonner'

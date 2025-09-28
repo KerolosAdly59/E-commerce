@@ -3,7 +3,6 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import Categories from './../../(pages)/categories/page';
 import Image from 'next/image';
 import { category } from '@/types/categoey.type';
 

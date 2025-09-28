@@ -1,10 +1,6 @@
 "use client"
 
-import { AddToWishListAction } from '@/app/WishListActions/addToWishList'
-import { GetUserWishListAction } from '@/app/WishListActions/getUserWishList'
 import { useWishlist } from '@/Context/WishListContext'
-import React, { useEffect, useState } from 'react'
-import { toast } from 'sonner'
 
 const AddIconCart = ({ id }: { id: string }) => {
 

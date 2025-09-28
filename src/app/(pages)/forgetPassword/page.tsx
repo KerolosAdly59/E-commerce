@@ -35,9 +35,7 @@ const onSubmit = (values: ForgetPasswordType) => {
 
   return (
     <>
-    <head>
-       <title>  Forget Password</title>
-    </head>
+
     <div className='w-full md:w-[85%] mx-auto my-15'>
       <h3 className='text-4xl font-semibold text-gray-800'>please enter your verification code</h3>
 

@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
 import GetSpecificCategory from "@/app/apis/specificCategory"
-import { FormItem } from "@/components/ui/form"
 import GetCategory from "@/app/apis/category"
 import { category } from "@/types/categoey.type"
 

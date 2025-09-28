@@ -4,7 +4,6 @@ import { CardHeader } from '@/components/ui/card';
 import { CardContent } from '@/components/ui/card';
 import { CardFooter } from '@/components/ui/card';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { product } from '@/types/product.type';
 import AddBtnCart from '../AddBtnCart/AddBtnCart';

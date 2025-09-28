@@ -33,9 +33,7 @@ const {addProductToCart}:any=useContext(cartContext)
   }
   return (
     <>
-    <head>
-       <title>  Wish List</title>
-    </head>
+    
     <div className='w-full md:w-[85%] mx-auto my-10 px-5 md:px-0 bg-slate-50'>
 
       <div className='py-5 px-14'>

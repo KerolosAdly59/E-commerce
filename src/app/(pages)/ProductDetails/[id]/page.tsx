@@ -1,6 +1,5 @@
 import React from 'react'
 import SingleProduct from '@/app/apis/SingleProduct'
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import AddBtnCart from '@/app/_components/AddBtnCart/AddBtnCart'
 

@@ -73,9 +73,7 @@ const CheckOut = () => {
 
     return (
         <>
-        <head>
-       <title>  CheckOut</title>
-    </head>
+        
        
         <div className='w-full md:w-1/2 my-10 mx-auto px-5 md:px-0'>
 

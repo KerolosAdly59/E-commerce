@@ -2,7 +2,6 @@
 
 import GetSpecificBrand from '@/app/apis/specificBrands'
 import { Button } from '@/components/ui/button'
-import { DialogHeader } from '@/components/ui/dialog'
 import { Brands } from '@/types/brands'
 import Image from 'next/image'
 import React, { useState } from 'react'
