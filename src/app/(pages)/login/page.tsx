@@ -33,7 +33,6 @@ const Login = () => {
       callbackUrl: "/"
     })
 
-    console.log(res);
     if(res?.ok){
       toast.success("login success",{
          position: "top-center",

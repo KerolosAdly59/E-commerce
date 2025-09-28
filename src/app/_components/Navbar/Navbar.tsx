@@ -35,7 +35,7 @@ const Navbar = () => {
 
 
         <button
-          className="md:hidden text-gray-800"
+          className="md:hidden cursor-pointer text-gray-800"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -113,7 +113,7 @@ const Navbar = () => {
               <div>
                 <h1 className='text-blue-500 font-bold'>Welcome {session.user.name}</h1>
 
-                <button className='cursor-pointer' onClick={() => signOut({
+                <button className='cursor-pointer pt-2' onClick={() => signOut({
                   callbackUrl: "/login"
                 })}>
                   Logout
@@ -123,12 +123,12 @@ const Navbar = () => {
             </div>
           </>}
           {status === "unauthenticated" && <> <div>
-            <Link href="/login">
+            <Link className='hidden md:block' href="/login">
               Login
             </Link>
           </div>
             <div>
-              <Link href="/register">
+              <Link className='hidden md:block' href="/register">
                 Register
               </Link>
             </div></>}
@@ -148,20 +148,7 @@ const Navbar = () => {
             <Link href="/brands" onClick={() => setIsOpen(false)}>Brands</Link>
           </>}
 
-          {status === "authenticated" && (
-            <div className="flex flex-col gap-2 items-center">
-              <span className="text-blue-500 font-bold">{session.user.name}</span>
-              <button
-                className="cursor-pointer"
-                onClick={() => {
-                  setIsOpen(false)
-                  signOut({ callbackUrl: "/login" })
-                }}
-              >
-                Logout
-              </button>
-            </div>
-          )}
+          
 
           {status === "unauthenticated" && <>
             <Link href="/login" onClick={() => setIsOpen(false)}>Login</Link>
