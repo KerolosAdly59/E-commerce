@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>WishList</title>
+      <title>Wish List</title>
       <meta name="description"  />
     </>
   );
