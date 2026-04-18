@@ -9,7 +9,7 @@ export async function getUserOrder() {
 
     const token = await getMyToken()
 
-    const { id }:{id:string} = jwtDecode(token)
+    const { id }:{id:String} = jwtDecode(token);
     console.log(id);
     
 

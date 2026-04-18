@@ -55,7 +55,7 @@ const Login = () => {
 
     
     <div className='mx-auto my-12 px-5 md:px-0 w-full md:w-1/2'>
-      <p className='text-center font-bold text-3xl mb-10'>Register Form</p>
+      <p className='text-center font-bold text-3xl mb-10'>Login</p>
 <Form  {...form}>
   <form  onSubmit={form.handleSubmit(handleRegister)}>
     
